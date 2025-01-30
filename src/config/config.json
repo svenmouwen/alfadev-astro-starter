@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Vet-echo",
-    "base_url": "https://astro-starter.alfadev.io",
+    "base_url": "https://vet-echo.nl",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.ico",
@@ -9,22 +9,28 @@
     "logo_width": "47",
     "logo_height": "47",
     "logo_text": "Vet-echo"
-},
-
-"params": {
-    "footer_description": "Building cool things, one line of code (and a lot of coffee) at a time. Got questions? Or just bored? Reach out!",
+  },
+  "params": {
+    "footer_description": "Vet-echo - Mobiele echografie en echocardiografie service in Midden-Nederland. Minder reizen voor huisdieren, meer gemak voor eigenaren. Een echo zegt meer dan 1000 woorden!",
     "email": "contact@vet-echo.nl",
     "location": "Utrecht",
     "phone": "+31612345678",
     "contact_form_action": "#",
-    "copyright": ""
-},
-
+    "copyright": " 2025 Aukje Swarte, Dierenarts en Echografie Specialist"
+  },
   "metadata": {
     "meta_author": "svenmouwen",
     "meta_image": "/images/logo.png",
-    "meta_description": "alfadev-astro-starter is a starter template for Astro, the modern static site generator for the modern web.",
-    "meta_keywords": ["astro", "Astro Starter", "alfadev", "Diego Alfaro Sáez", "static site generator", "modern web", "astro template"],
-    "meta_application_name": "alfadev-astro-starter"
+    "meta_description": "Vet-echo is een mobiele echografie en echocardiografie service in Midden-Nederland.",
+    "meta_keywords": [
+      "astro",
+      "Astro Starter",
+      "alfadev",
+      "Diego Alfaro Sáez",
+      "static site generator",
+      "modern web",
+      "astro template"
+    ],
+    "meta_application_name": "vet-echo-cardiologie"
   }
 }

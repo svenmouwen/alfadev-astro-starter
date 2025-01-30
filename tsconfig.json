@@ -13,7 +13,11 @@
     "incremental": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+
+      // "@starlight/*": ["./node_modules/@astrojs/starlight/*"]
+    
+      
     },
     "plugins": [
       {

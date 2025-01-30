@@ -1,6 +1,12 @@
 ---
 import config from "@/config/config.json";
 import { Image } from "astro:assets";
+
+interface Props {
+  src?: string;
+  showText?: boolean;
+}
+
 const { src, showText } = Astro.props;
 const {
   logo_text,
