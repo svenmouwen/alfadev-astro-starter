@@ -5,7 +5,6 @@ import tailwind from "@astrojs/tailwind";
 import { defineConfig, sharpImageService } from "astro/config";
 import config from "./src/config/config.json";
 import AutoImport from "astro-auto-import";
-import starlight from "astrojs/startlight"
 
 // https://astro.build/config
 export default defineConfig({
@@ -39,8 +38,7 @@ export default defineConfig({
         "@/components/Badge.astro",
       ],
     }),
-    mdx(),
-    starlight(),
+    mdx()
   ],
   markdown: {
     shikiConfig: {
