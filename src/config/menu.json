@@ -5,59 +5,33 @@
       "url": "/"
     },
     {
-      "name": "Features",
-      "url": "/features"
-    },
-    {
-      "name": "Theme",
-      "url": "/theme"
-    },
-    {
-      "name": "About",
-      "url": "/about"
-    },
-    {
-      "name": "Pages",
-      "url": "",
+      "name": "Informatie",
+      "url": "/info",
       "hasChildren": true,
       "children": [
         {
-          "name": "Changelog",
-          "url": "/changelog"
+          "name": "Profiel",
+          "url": "/profiel"
         },
         {
-          "name": "Does not exist",
-          "url": "/does-not-exist"
-        },
-
-        {
-          "name": "Neither does this",
-          "url": "/neither-does-this"
+          "name": "Onderzoeken",
+          "url": "/onderzoeken"
         },
         {
-          "name": "Nope, not this one either",
-          "url": "/nope-not-this-one-either"
-        },
-        {
-          "name": "What about this?",
-          "url": "/what-about-this"
-        },
-        {
-          "name": "Come on, this one must exist",
-          "url": "/come-on-this-one-must-exist"
-        },
-        {
-          "name": "Do you expect this to exist?",
-          "url": "/do-you-expect-this-to-exist"
+          "name": "Huisdier-eigenaren",
+          "url": "/huisdier-eigenaren"
         }
       ]
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
     }
   ],
-
   "footer": [
     {
-      "name": "About",
-      "url": "/about"
+      "name": "Profiel",
+      "url": "/profiel"
     },
     {
       "name": "Changelog",

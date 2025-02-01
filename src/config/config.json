@@ -1,8 +1,8 @@
 {
   "site": {
-    "title": "alfadev-astro-starter",
-    "base_url": "https://astro-starter.alfadev.io",
-    "base_path": "/",
+    "title": "Vet-echo",
+    "base_url": "https://vet-echo.nl",
+    "base_path": "",
     "trailing_slash": false,
     "favicon": "/images/favicon.ico",
     "logo": "/images/logo.png",
@@ -12,19 +12,19 @@
   },
 
   "params": {
-    "footer_description": "Building cool things, one line of code (and a lot of coffee) at a time. Got questions? Or just bored? Reach out!",
-    "email": "diego.alfadev@gmail.com",
-    "location": "Somewhere on Earth, where the Wi-Fi is decent and the coffee is strong.",
-    "phone": "+704-555-0127 (but let's be honest, email is faster)",
-    "contact_form_action": "#",
-    "copyright": "Copyright © 2023 proudly crafted by [AlfaDev](https://github.com/diego-alfadev)"
+    "footer_description": "Vet-echo is een mobiele echografie en echocardiografie service in Midden-Nederland. Hoe fijn is het als huisdieren minder hoeven te reizen en we de eigenaar van dienst kunnen zijn in de eigen kliniek? ",
+    "email": "Aukje@vet-echo.nl", 
+    "location": "Utrecht, The Netherlands", 
+    "phone": "+31612345678", 
+    "contact_form_action": "Neem vandaag nog contact met ons op voor meer informatie of om een afspraak te maken!", 
+    "copyright": "Copyright © 2025 Aukje Swarte Vet-echo echocardiografie"
 },
 
   "metadata": {
-    "meta_author": "alfadev",
+    "meta_author": "svenmouwen",
     "meta_image": "/images/logo.png",
-    "meta_description": "alfadev-astro-starter is a starter template for Astro, the modern static site generator for the modern web.",
-    "meta_keywords": ["astro", "Astro Starter", "alfadev", "Diego Alfaro Sáez", "static site generator", "modern web", "astro template"],
-    "meta_application_name": "alfadev-astro-starter"
+    "meta_description": "Vet-echo is een mobiele echografie en echocardiografie service uit Midden-Nederland.", 
+    "meta_keywords": ["Vet-echo", "Aukje Swarte", "echografie", "echocardiografie", "huisdieren", "mobiele service", "Midden-Nederland"],
+    "meta_application_name": "Vet-echo"
   }
 }

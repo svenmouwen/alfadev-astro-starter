@@ -24,3 +24,6 @@ package-lock.json
 
 # ignore .astro directory
 .astro
+
+# ignore .check checklist directory
+.check.*
