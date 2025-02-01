@@ -1,12 +1,12 @@
 # AlfaDev Astro Starter
-
 ![https://astro.build/](https://img.shields.io/badge/astro-4.16.9-orange?style=flat&logo=astro&logoColor=orange&link=https%3A%2F%2Fastro.build%2F)
 ![https://www.typescriptlang.org/](https://img.shields.io/badge/typescript-5.6.3-blue?style=flat&logo=typescript&link=https%3A%2F%2Fwww.typescriptlang.org%2F)
 ![https://tailwindcss.com/](https://img.shields.io/badge/tailwind-3.4.14-cyan?style=flat&logo=tailwindcss&link=https%3A%2F%2Ftailwindcss.com%2F)
 
-**An Astro Starter** 🛠️ - _batteries-included_ - designed for content-driven pages like portfolios, landing pages, showcases, and more.
 
-With a focus on simplicity, speed, and developer happiness, this starter helps you skip the repetitive boilerplate setup and dive straight into creating.
+**An Astro Starter** 🛠️ - *batteries-included* - designed for content-driven pages like portfolios, landing pages, showcases, and more.
+
+With a focus on simplicity, speed, and developer happiness, this starter helps you skip the repetitive boilerplate setup and dive straight into creating.  
 
 ---
 
@@ -15,10 +15,11 @@ With a focus on simplicity, speed, and developer happiness, this starter helps y
 The mantra is simple: **"Don't make me think"**. This starter is designed to be as **unobtrusive as possible**, providing you with the tools and guidelines needed to focus on what's important, and with the minimal amount of code to get you started.
 
 Our goals are:
-
 - **Ready in minutes:** Get started quickly with a pre-configured setup.
 - **Don't make me think:** Spend your time building, not understanding the template.
 - **Simple and clean:** The codebase is minimal and clean.
+
+
 
 ## ✨ Features
 
@@ -32,10 +33,10 @@ The starter is designed to be **the less intrusive as possible**, providing you 
 - **Extendable:** Easily add or edit content using markdown files with the power of [Astro]
 - **Focused:** Spend your time building, do not waste your time understanding the template.
 - **Intuitive:** Project structure is designed to be easy to understand and navigate. And the built-in codebase is minimal and clean.
-- **Customizable:** Adapt every corner of the template to fit your needs. The code is yours to change. The
-- **Themable:** Fully supports dark theme with a simple and extensible system.
+- **Customizable:** Adapt every corner of the template to fit your needs. The code is yours to change. The 
+- **Themable:** Fully supports dark theme with a simple and extensible system.  
 - **Lightweight:** Assets are optimized for minimal load times with [sharp](https://sharp.pixelplumbing.com/).
-- **Content-Centric:** Perfect for showcasing content like services, portfolios, or products.
+- **Content-Centric:** Perfect for showcasing content like services, portfolios, or products.  
 - **Developer-Friendly:** Built for developers who value simplicity, flexibility, and modern tools.
 - **Reduced Boilerplate:** Get started quickly with a pre-configured setup.
 
@@ -60,7 +61,7 @@ The starter is designed to be **the less intrusive as possible**, providing you 
 
    ```bash
     npm run dev
-   ```
+    ```
 
 4. **Open your browser and visit [http://localhost:4321](http://localhost:4321)**
 
@@ -131,6 +132,8 @@ There's 3 files involved in the theme customization:
 │       └── theme.json    # A JSON file used for theme domain names and font settings. Define your theme color names and font settings here.
 ├── tailwind.config.js   # The tailwind configuration file, you know what it is, the other two files are used here.
 ```
+ 
+
 
 ## 🧞 Commands (by Astro)
 

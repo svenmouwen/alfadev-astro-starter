@@ -2,13 +2,6 @@
 import TestimonialSlider from "@/components/react/TestimonialSlider";
 import { markdownify } from "@/lib/utils/textConverter";
 
-interface Props {
-src?: string;
-showText?: boolean;
-title: string;
-description: string;
-testimonial_list: TestimonialItem[];
-}
 
 export type TestimonialItem = {
   avatar?: string;
@@ -24,16 +17,7 @@ export type Testimonial = {
   testimonial_list: TestimonialItem[];
 };
 
-const testimonial: Testimonial =  { {
-  title,
-  description,
-  testimonial_list,
-}: {
-  title: string;
-  description: string;
-testimonial_list: TestimonialItem[];
-} = Astro.props;
-}
+const { testimonial } = Astro.props;
 ---
 
 <section class="reviews">
