@@ -11,7 +11,7 @@ import { AstroFont } from "astro-font";
 import { ViewTransitions } from "astro:transitions";
 import { getEntry } from "astro:content";
 import type { PageType } from "@/content/page.types";
-import type { ContentCollectionKey } from "astro:content";
+import type { ContentCollectionKey, ContentEntryMap } from "astro:content";
 
 const GTAG = import.meta.env.GTAG_ID
 
@@ -81,12 +81,12 @@ const {
   image,
   noindex,
   canonical_url,
-} = Astro.props;
+} = Astro.props as Props;
 
 let page: PageType | undefined = undefined;
 
 if (entry_keys) {
-  const page_entry = await getEntry(...entry_keys);
+  const page_entry = await getEntry(ContentEntryMap, entry_keys);
   if (page_entry) {
     page = page_entry.data as PageType;
   }
@@ -149,7 +149,7 @@ const _noindex =
       config={[
         {
           src: [],
-          preload: false,
+          preload: true,
           display: "swap",
           name: fontPrimary!,
           fallback: "sans-serif",
@@ -158,7 +158,7 @@ const _noindex =
         },
         {
           src: [],
-          preload: false,
+          preload: true,
           display: "swap",
           name: fontSecondary!,
           fallback: "sans-serif",

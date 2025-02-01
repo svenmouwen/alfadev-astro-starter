@@ -1,0 +1,39 @@
+backend:
+  name: git
+  branch: main # The branch to update
+
+media_folder: "public/images/uploads" # Folder where uploaded files will be stored
+public_folder: "/images/uploads" # Path to access uploaded files
+
+collections:
+  - name: "pages" # Used in routes, e.g., /pages/my-page
+    label: "Pages" # Used in the UI
+    folder: "src/content" # The path to the folder containing your markdown files
+    create: true # Allow users to create new pages
+    slug: "{{slug}}" # The slug for the page URL
+    fields:
+      - { label: "Document Title", name: "document_title", widget: "string" }
+      - { label: "Meta Description", name: "meta_description", widget: "text" }
+      - { label: "Meta Keywords", name: "meta_keywords", widget: "list" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "blog" # Another collection for blog posts
+    label: "Blog"
+    folder: "src/content/blog" # Path to blog posts
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Featured Image", name: "featured_image", widget: "image" }
+
+  - name: "settings" # For site-wide settings
+    label: "Settings"
+    file: "src/content/settings.yml" # Path to settings file
+    fields:
+      - { label: "Site Title", name: "site_title", widget: "string" }
+      - { label: "Site Description", name: "site_description", widget: "text" }
+      - { label: "Social Links", name: "social_links", widget: "list", default: [] }
