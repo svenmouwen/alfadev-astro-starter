@@ -6,7 +6,7 @@ import { defineConfig, sharpImageService } from "astro/config";
 import config from "./src/config/config.json";
 import AutoImport from "astro-auto-import";
 import starlight from "@astrojs/starlight";
-import commonjs from '@rollup/plugin-commonjs'; // Add this line
+import commonjs from "@rollup/plugin-commonjs";
 
 // https://astro.build/config
 /**
@@ -38,13 +38,13 @@ export default defineConfig({
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   output: config.site.output ? config.site.output : "static",
   adapters: [config.site.adapter ? config.site.adapter : "filesystem"], //TODO: add node adapter
-  integrations: [   
+  integrations: [
     starlight({
       title: "Docs",
       logo: {
         src: "./src/assets/images/logo.svg",
-      }
-}), 
+      },
+    }),
     react(),
     sitemap(),
     tailwind(),
@@ -70,9 +70,7 @@ export default defineConfig({
       external: ["./admin"],
       noExternal: true,
     },
-    plugins: [
-      commonjs(), // Add this line
-    ],
+    plugins: [commonjs()],
     css: {
       preprocessorOptions: {
         scss: {
@@ -84,17 +82,24 @@ export default defineConfig({
   build: {
     format: "file",
     client: "esbuild",
-  },
+    rollupOptions: {
+      input: "/src/content/homepage/index.md", // Your entry file
+      output: {
+        dir: "dist",
+        format: "esm", // Output format
+      },
+    },
 
-  // Image optimization service
-  image: {
-    service: sharpImageService(),
-  },
+    // Image optimization service
+    image: {
+      service: sharpImageService(),
+    },
 
-  markdown: {
-    shikiConfig: {
-      theme: "one-dark-pro",
-      wrap: true,
+    markdown: {
+      shikiConfig: {
+        theme: "one-dark-pro",
+        wrap: true,
+      },
     },
   },
 });

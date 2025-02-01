@@ -1,26 +1,20 @@
 import { defineCollection, z } from 'astro:content';
-import Loader from '@astrojs/starlight';
-import Schema  from '@astrojs/starlight';
+import { docsLoader } from '@astrojs/starlight/loaders';
+import { docsSchema } from '@astrojs/starlight/schema';
 
-const docsSchema = () => Schema.
-const docsLoader = () => Loader.files({ path: 'content/docs', extensions: ['.md'] });
+// Define the schema for your docs
+const schema = docsSchema();
 
-const docsConfig = docsLoader(docsSchema);
+// Use the docsLoader to load files from the specified path
+const loader = docsLoader();
 
+// Define the collection using the schema and loader
+export const docsCollection = defineCollection({
+    schema: z.object(schema({})),
+    loader: loader
+});
 
-
-export const docsCollection = defineCollection(
-	  'docs',
-  {
-	 docsSchema: Schema,
-
- 	docsLoader
-  }
-
-  Loader: docsLoader,
-);
-
+// Export the collections
 export const collections = {
-docsCollection: Schema.markdown(),
-docsLoader: Loader 
+    docsCollection
 };
