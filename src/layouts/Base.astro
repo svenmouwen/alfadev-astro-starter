@@ -41,7 +41,7 @@ export interface Props {
    *
    * @see PageType
    */
-  entry_keys?: [keyof ContentCollectionKey, string];
+  entry_keys?: [keyof ContentEntryMap, string];
   /**
    * Override <title> og:title and twitter:title
    * @default config.site.title
@@ -86,7 +86,10 @@ const {
 let page: PageType | undefined = undefined;
 
 if (entry_keys) {
-  const page_entry = await getEntry(ContentEntryMap, entry_keys);
+  const page_entry = await getEntry(
+    entry_keys[0],
+    entry_keys[1]
+  );
   if (page_entry) {
     page = page_entry.data as PageType;
   }
