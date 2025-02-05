@@ -51,11 +51,18 @@ $dark: (
     @each $key, $value in $default {
         --#{$key}: #{to_rgba($value, 1)};
     }
+}
 
+:root #logo {
+    src: url("images/logo_light.svg");
 }
 
 .dark {
     @each $key, $value in $dark {
         --#{$key}: #{to_rgba($value, 1)};
     }
+}
+
+.dark #logo {
+    src: url("images/logo_dark.svg");
 }

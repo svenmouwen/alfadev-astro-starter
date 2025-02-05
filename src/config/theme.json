@@ -24,5 +24,12 @@
       "secondary": "Fredoka:wght@600",
       "secondary_type": "sans-serif"
     }
+  },
+  "logo": {
+    "logo": "/images/logo copy.svg",
+    "logo_dark": "/images/logo copy 2.svg",
+    "logo_width": "47",
+    "logo_height": "47",
+    "logo_text": "Vet-echo, mobiele echografie en echocardiografie"
   }
 }

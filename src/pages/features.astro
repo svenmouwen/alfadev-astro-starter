@@ -3,8 +3,11 @@ import PageHeader from "@/components/core/PageHeader.astro";
 import Base from "@/layouts/Base.astro";
 import { getEntry } from "astro:content";
 
+export const prerender = false; 
 const features = await getEntry("features", "index");
+if (!features) throw new Error("Features content not found");
 const { Content } = await features.render();
+
 ---
 
 <Base>
