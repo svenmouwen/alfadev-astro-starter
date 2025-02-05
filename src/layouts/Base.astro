@@ -8,13 +8,12 @@ import Header from "@/layouts/partials/Header.astro";
 import "@/styles/main.scss";
 
 import { AstroFont } from "astro-font";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import { getEntry } from "astro:content";
 import type { PageType } from "@/content/page.types";
 import type { ContentCollectionKey, ContentEntryMap } from "astro:content";
 
 
-const GTAG = import.meta.env.GTAG_ID
 
 // font families
 const sf = theme.fonts.font_family.primary;
@@ -70,6 +69,7 @@ export interface Props {
   image?: string;
   noindex?: boolean;
   canonical_url?: string;
+  props?: [][];
 }
 
 // distructure frontmatters
@@ -178,16 +178,6 @@ const _noindex =
       content="width=device-width, initial-scale=1, maximum-scale=5"
     />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src={"https://www.googletagmanager.com/gtag/js?id="+GTAG}></script>
-    <script type="text/javascript" define:vars={{GTAG}}>
-      // Pasamos la variable GTAG_ID al navegador como una variable global
-      window.GTAG_ID = GTAG;
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', window.GTAG_ID);
-    </script>
 
     <!-- title -->
     <title>
@@ -213,7 +203,7 @@ const _noindex =
     <!-- meta-description -->
     <meta name="description" content={plainify(_description)} />
 
-    <ViewTransitions />
+    <ClientRouter />
 
     <!-- author from config.json -->
     <meta name="author" content={plainify(_author)} />
@@ -284,10 +274,10 @@ const _noindex =
    
   </head>
   <body class="transition-colors duration-500">
-    <ViewTransitions />
+    <ClientRouter />
     <TwSizeIndicator />
     <Header />
-    <main id="main-content">
+    <main id="main-content" >
       <slot />
     </main>
     <Footer />

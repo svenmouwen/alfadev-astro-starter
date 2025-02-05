@@ -1,6 +1,11 @@
 import type { HTMLAttributes } from "astro/types";
 import type { IconProps } from "react-feather";
+import type { Testimonial } from "@/components/Testimonial.astro";
+import { collections } from "@/content/config.ts";
 
+
+
+const posts = collections.getEntries('post');
 
 export interface LinkButtonI {
   /**
@@ -20,6 +25,7 @@ export interface LinkButtonI {
 
 export type LinkButton = HTMLAttributes<'a'> & LinkButtonI;
 
+
 export interface PageSection {
   title: string;
   /**
@@ -32,6 +38,61 @@ export interface PageSection {
   image_position?: "top" | "bottom" | "left" | "right";
 };
 
+export interface Post {
+  title: string;
+  title_size?: string;
+  date: Date;
+  slug: string;
+  content: string;
+  image?: string;
+  image_position?: "top" | "bottom" | "left" | "right";
+}
+
+
+export interface FeatureItem {
+  title: string;
+  description: string;
+  icon: IconProps["name"];
+}
+
+export interface Features {
+  title: string;
+  description: string;
+  feature_list: FeatureItem[];
+}
+
+export interface FooterContact {
+  location: string;
+  email: string;
+  phone: string;
+}
+
+export interface FooterContent {
+  copyright: string;
+  footer_description: string;
+}
+
+export type Footer = FooterContact & FooterContent;
+
+export type CallToAction = {
+  title: "Because we love <span class='text-accent text-shadow-[0px_5px_15px]' >Astro</span> and <span class='text-[#38bdf8] text-shadow-[0px_5px_15px]'>Tailwind</span>.",
+  description: "Save yourself some time (and sanity). Use this template and act like you planned everything from scratch. We won't tell. **Just be sure to leave a star, please.**",
+  button: {
+    label: "Grab the Starter",
+    href: "https://github.com/diego-alfadev/alfadev-astro-starter",
+    color: 'accent'
+  }
+}
+
+
+export interface homepageData { 
+  banner: PageSection, 
+  sections: PageSection[], 
+  features: Features, 
+  testimonial: Testimonial,
+  footer: Footer, 
+  call_to_action: CallToAction
+};
 
 export interface PageConfig {
   /**
@@ -94,7 +155,8 @@ export interface PageCommonProps {
   // Limited to 4 buttons
   buttons?: LinkButton[] & { length: 0 | 1 | 2 | 3 | 4 };
   sections?: PageSection[];
+  props?: [][]; // any other props
 }
 
-export type PageType<data_type = any> = PageCommonProps &
-  PageConfig & { data: data_type };
+export type PageType<data_type = Page> = PageCommonProps &
+  PageConfig & { data?: data_type };

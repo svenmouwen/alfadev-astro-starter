@@ -1,7 +1,7 @@
 import type { Testimonial } from "@/components/Testimonial.astro";
-import type { Section } from "@/components/core/Section.astro";
-import type { LinkButton, PageType } from "@/content/page.types";
+import type { LinkButton, PageType, Post } from "@/content/page.types";
 import { defineCollection, z } from "astro:content";
+import { postsCollection } from "@/content.config";
 
 const zodPageConfig = z.custom<PageType>();
 
@@ -13,7 +13,7 @@ const pagesCollection = defineCollection({
 
 const indexSchema = z.intersection(
   z.object({
-    banner: z.custom<Section>(),
+    banner: z.custom<Post>(),
     features: z.object({
       title: z.string(),
       description: z.string(),
@@ -40,6 +40,7 @@ const indexPage = defineCollection({
   schema: indexSchema,
 });
 
+
 // Export collections
 export const collections = {
   about: pagesCollection,
@@ -48,6 +49,5 @@ export const collections = {
   features: pagesCollection,
   homepage: indexPage,
   pages: pagesCollection,
+  posts: postsCollection
 };
-
-

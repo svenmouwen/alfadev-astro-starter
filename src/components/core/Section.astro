@@ -1,44 +1,46 @@
 ---
-import type { PageSection } from "@/content/page.types";
 import { markdownify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
 import Button from "../LinkButton.astro";
+import { getCollection } from "astro:content";
 
-export type Section = PageSection;
-export type Props = {
-  section: Section;
-};
+const posts = await getCollection("posts");
 
-const { section } = Astro.props;
-if (!section) {
-  throw new Error("Section data is required");
+
+
+function section(slug: string) {
+  return posts.find((post) => {
+    return post.data.slug === slug;
+  });
 }
-const { title, buttons, image, content, image_position } = section;
-const image_position_classes = (() => {
-  if (!image && !image_position) {
-    return ["", "col-12", ""];
-  }
 
-  if (image) {
-    switch (image_position) {
-      case "top":
-        return ["flex-row-reverse", "col-12", "col-12 mb-4 lg:mb-0 "];
-      case "bottom":
-        return ["", "col-12", "col-12"];
-      case "left":
-        return [
-          "flex-row-reverse",
-          "col-12 md:col-7 lg:col-6",
-          "col-12 md:col-5 lg:col-6",
-        ];
-      case "right":
-      default:
-        return ["", "col-12 md:col-7 lg:col-6", "col-12 md:col-5 lg:col-6"];
+  const image_position_classes = (() => {
+    if (!image && !image_position) {
+      return ["", "col-12", ""];
     }
-  } else {
-    return ["", "col-12", ""];
-  }
-})();
+
+    if (image) {
+      switch (image_position) {
+        case "top":
+          return ["flex-row-reverse", "col-12", "col-12 mb-4 lg:mb-0 "];
+        case "bottom":
+          return ["", "col-12", "col-12"];
+        case "left":
+          return [
+            "flex-row-reverse",
+            "col-12 md:col-7 lg:col-6",
+            "col-12 md:col-5 lg:col-6",
+          ];
+        case "right":
+        default:
+          return ["", "col-12 md:col-7 lg:col-6", "col-12 md:col-5 lg:col-6"];
+      }
+    } else {
+      return ["", "col-12", ""];
+    }
+  });
+}
+
 ---
 
 <section class="section relative">

@@ -1,0 +1,17 @@
+---
+import { getEntry } from 'astro:content';
+import { post } from '@/content/config.ts';
+// src/pages/posts/[slug].astro
+
+
+
+export async function getStaticPaths() {
+    const response = await getEntries(post);
+    const posts = await response.json();
+
+    return posts.map(post => ({
+        params: { slug: post.slug },
+    }));
+}
+---
+

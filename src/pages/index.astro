@@ -2,6 +2,7 @@
 import Section from "@/components/core/Section.astro";
 import Features from "@/components/Features.astro";
 import Testimonial from "@/components/Testimonial.astro";
+import type { PageSection } from "@/content/page.types";
 import Base from "@/layouts/Base.astro";
 import Cta from "@/layouts/partials/Cta.astro";
 import { getEntry } from "astro:content";
@@ -9,8 +10,7 @@ import { getEntry } from "astro:content";
 const homepage = await getEntry("homepage", "index");
 if (!homepage) throw new Error("Homepage content not found");
 // console.log(homepage);
-const { banner, sections, features, testimonial } = homepage.data;
-const call_to_action = homepage.data.call_to_action;
+const { banner, sections, features, testimonial, call_to_action } = homepage.data;
 ---
 
 <Base>
@@ -22,7 +22,7 @@ const call_to_action = homepage.data.call_to_action;
   {
     sections && (
       <section class="multi-section">
-        {sections.map((section) => (
+        {sections.map((section: PageSection) => (
           <Section section={section} />
         ))}
       </section>
