@@ -5,6 +5,8 @@ import tailwind from "@astrojs/tailwind";
 import { defineConfig, sharpImageService } from "astro/config";
 import config from "./src/config/config.json";
 import AutoImport from "astro-auto-import";
+import svelte from '@astrojs/svelte';
+// import sveltia from "astro-sveltia";
 
 import cloudflare from "@astrojs/cloudflare";
 
@@ -15,7 +17,7 @@ export default defineConfig({
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   compressHTML: true,
   minify: true,
-  output: 'hybrid',
+  output: 'static',
 
   vite: {
     css: {
@@ -35,7 +37,7 @@ export default defineConfig({
     service: sharpImageService(),
   },
 
-  integrations: [react(), sitemap(), tailwind(), AutoImport({
+  integrations: [react(), sitemap(), tailwind(), svelte(), AutoImport({
     // import react components to use in mdx
     imports: [
       "@/components/react/FeatherIcon.tsx",
@@ -44,7 +46,7 @@ export default defineConfig({
       "@/components/react/Changelog.tsx",
       "@/components/Badge.astro",
     ],
-  }), mdx(),],
+  }), mdx(), ],
 
   markdown: {
     shikiConfig: {

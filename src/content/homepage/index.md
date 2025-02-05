@@ -5,7 +5,7 @@ banner:
   title: 'An <span class="text-accent text-shadow-[0px_5px_15px] shadow-accent/10">Astro</span> Starter <span class="text-secondary"> batteries-included</span>'
   title_size: "text-4xl md:text-6xl"
   content: ""
-  image: /images/Vet-echo.png
+  image: /images/logo.png
   buttons:
     - label: Get the Code
       href: ""

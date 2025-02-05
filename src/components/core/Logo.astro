@@ -16,6 +16,7 @@ const {
 } = config.site;
 
 const text = logo_text;
+export const prerender = false
 ---
 
 <a href="/" class="navbar-brand flex flex-row items-center">
@@ -34,11 +35,11 @@ const text = logo_text;
     </svg>    )
   }
 
-  {
+  <!-- {
     showText != false && (
       <p class="hidden md:block text-text md:text-3xl font-bold ml-2">
         {text ? text : logo_text}
       </p>
     )
-  }
+  } -->
 </a>

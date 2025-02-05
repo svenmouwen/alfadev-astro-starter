@@ -13,11 +13,12 @@ import { getEntry } from "astro:content";
 import type { PageType } from "@/content/page.types";
 import type { ContentCollectionKey, ContentEntryMap } from "astro:content";
 
+
 const GTAG = import.meta.env.GTAG_ID
 
 // font families
-const pf = theme.fonts.font_family.primary;
-const sf = theme.fonts.font_family.secondary;
+const sf = theme.fonts.font_family.primary;
+const pf = theme.fonts.font_family.secondary;
 
 let fontPrimary, fontSecondary;
 if (theme.fonts.font_family.primary) {
@@ -91,7 +92,7 @@ if (entry_keys) {
     entry_keys[1]
   );
   if (page_entry) {
-    page = page_entry.data as PageType;
+    page = page_entry as PageType;
   }
 }
 const _title = title
@@ -280,8 +281,10 @@ const _noindex =
 
       document.addEventListener("astro:after-swap", setTheme);
     </script>
+   
   </head>
   <body class="transition-colors duration-500">
+    <ViewTransitions />
     <TwSizeIndicator />
     <Header />
     <main id="main-content">

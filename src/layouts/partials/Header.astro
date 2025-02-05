@@ -3,6 +3,8 @@ import Logo from "@/components/core/Logo.astro";
 import ThemeToggle from "@/components/core/ThemeToggle.astro";
 import menu from "@/config/menu.json";
 
+
+
 export interface ChildNavigationLink {
   name: string;
   url: string;
@@ -15,22 +17,27 @@ export interface NavigationLink {
   children?: ChildNavigationLink[];
 }
 
+export const prerender = false
+
 const { main }: { main: NavigationLink[] } = menu;
+
 const { pathname } = Astro.url;
 ---
 
 <header class="header">
-  <nav class="navbar container">
+  <nav class="navbar container min-h-28">
     <!-- logo -->
-    <div class="order-0">
+    <div class="Relative flex justify-between order-center items-center">
+      <div class="">
       <Logo />
+      </div>
     </div>
     <!-- navbar toggler -->
     <input id="nav-toggle" type="checkbox" class="hidden" />
     <label
       id="show-button"
       for="nav-toggle"
-      class="order-2 flex cursor-pointer items-center lg:order-1 lg:hidden mr-6"
+      class="absolute mr-6 right-0 lg:order-1 lg:hidden"
     >
       <svg class="h-6 fill-current" viewBox="0 0 20 20">
         <title>Menu Open</title>
@@ -40,7 +47,7 @@ const { pathname } = Astro.url;
     <label
       id="hide-button"
       for="nav-toggle"
-      class="order-2 hidden cursor-pointer items-center lg:order-1 mr-6"
+      class="absolute hidden cursor-pointer mr-6 right-0 lg:relative lg:order-1"
     >
       <svg class="h-6 fill-current" viewBox="0 0 20 20">
         <title>Menu Close</title>
@@ -53,7 +60,7 @@ const { pathname } = Astro.url;
 
     <ul
       id="nav-menu"
-      class="navbar-nav order-3 hidden w-full lg:order-1 lg:flex lg:w-auto lg:space-x-2 "
+      class="navbar-nav order-3 hidden w-auto space-x-2 lg:order-1 lg:flex lg:w-auto lg:space-x-2 "
     >
       {
         main.map((menu) => (
