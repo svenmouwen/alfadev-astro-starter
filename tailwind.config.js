@@ -13,6 +13,13 @@ if (theme_config.fonts.font_family.secondary) {
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  /**
+ * Generates a regular expression pattern for a background color class.
+ *
+ * @param {string} color - The color to be used in the background class.
+ * @returns {Array<Object>} An array containing an object with a pattern property,
+ *                         which is a regular expression matching the specified color.
+ */
   safelist: [{ pattern: /^col-/ }, ...theme_config.colors.flatMap((color) => [{ pattern: new RegExp(`bg-${color}`) }]), {pattern: /^btn-/}],
   darkMode: "selector",
   theme: {
